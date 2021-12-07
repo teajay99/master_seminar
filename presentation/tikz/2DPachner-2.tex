@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+ \def\a{1.45}
+ \def\b{0.5}
+ \def\trigConst{0.816497}
+
+ %1st Triangle
+ \draw[thick, dashed] (-\a-\b,0) -- (-\b, 0);
+ \draw[thick] (-\a-\b,0)         -- ({-\b-(0.5*\a)}, {\trigConst * \a});
+ \draw[thick] (-\b,0)    -- ({-\b-(0.5*\a)}, {\trigConst * \a});
+ \draw[thick] (-\a-\b,0)         -- ({-\b-(0.5*\a)}, {-\trigConst * \a});
+ \draw[thick] (-\b,0)            -- ({-\b-(0.5*\a)}, {-\trigConst * \a});
+
+
+ %2nd Triangle
+ \draw[thick, dashed] ({\b+(0.5*\a)}, {\trigConst * \a}) -- ({\b+(0.5*\a)}, {-\trigConst * \a});
+ \draw[thick] (\a+\b,0)                                  -- ({\b+(0.5*\a)}, {\trigConst * \a});
+ \draw[thick] (\b,0)                                     -- ({\b+(0.5*\a)}, {\trigConst * \a});
+ \draw[thick] (\a+\b,0)                                  -- ({\b+(0.5*\a)}, -{\trigConst * \a});
+ \draw[thick] (\b,0)                                     -- ({\b+(0.5*\a)}, -{\trigConst * \a});
+
+ %Lines to center
+
+ \node[align=center] at (0,0) {$\xrightleftharpoons[(2,2)]{(2,2)}$};
+\end{tikzpicture}

@@ -1,0 +1,115 @@
+
+\begin{frame}{What the heck is quantum gravity anyway?}
+ \begin{columns}[onlytextwidth,t]
+  \uncover<1->{\begin{column}{0.48\textwidth}
+    \begin{block}{Classical Gravity}
+     \vspace{0pt}
+     Einstein Field equations:
+     \begin{align*}
+      \uncoverubrace<2->{\frac{8 \pi G}{c^4}}{\kappa}\uncoverubrace<2->{T_{\mu\nu}}{\substack{\text{stuff within} \\  \text{space-time}}} & = \uncoverubrace<2->{R_{\mu\nu} - \frac{1}{2} R g_{\mu\nu} + \Lambda g_{\mu \nu}}{\text{geometry of space-time}}
+      \uncover<3->{\intertext{Einstein Hilbert Action (for $T_{\mu\nu} = 0$):}
+      S_{EH} [g] & = \frac{1}{2 \kappa} \int \mathrm{d}^4 x \sqrt{-\mathrm{det} \, g} \, (R - 2\Lambda)}
+     \end{align*}
+    \end{block}
+   \end{column}}
+  \begin{column}{0.48\textwidth}
+   \uncover<4->{\begin{block}{Quantum Gravity}
+     \vspace{0pt}
+     Path integral formulation:
+     \begin{align*}
+      Z_E & = \int \mathcal{D} g \, \exp \left( - S[g]\right)
+     \end{align*}
+    \end{block}}
+   \uncover<5->{\textbf{Problems}
+    \begin{itemize}
+     \item non renormalizable coupling expansion
+     \item might still be asymptotically safe \\ $\Rightarrow$ non-pertubative approaches
+    \end{itemize}}
+  \end{column}
+ \end{columns}
+\end{frame}
+
+
+\begin{frame}{Triangulations}
+ \begin{columns}
+  \begin{column}{0.38\textwidth}
+   \begin{block}{Discretisation of $Z_E$}
+    \vspace{0pt}
+    \uncover<1->{Approximate space-time Manifold by triangulation}
+    \uncover<2->{\begin{align*}
+      \underbrace{\int \mathcal{D}g}_{\substack{\text{Integral over possible} \\ \text{metric tensors}}} \longrightarrow \underbrace{\sum_T \frac{1}{C_T}}_{\substack{\text{Sum over possible}\\ \text{triangulations}}}
+     \end{align*}}
+    \uncover<3->{Only equilateral triangles (simplices)}
+    \uncover<4->{\begin{align*}
+      S_E & = -\kappa_2(\kappa) N_2 + \kappa_4(\kappa, \Lambda) N_4
+     \end{align*}
+     where $N_k$ is the number of $k$-simplices in  $T$}
+   \end{block}
+  \end{column}
+  \begin{column}{0.60\textwidth}
+   \begin{figure}
+    \centering
+    \only<1-2>{\includegraphics[width=\textwidth]{pics/triangulation-fib.png}
+     \caption{Triangulation of $S_2$ obtained by the Fibonacci Lattice\\ \tiny{rendered with the fresnel library (\url{https://github.com/glotzerlab/fresnel})}}}
+    \only<3-4>{\includegraphics[width=\textwidth]{pics/triangulation-ico.png}
+     \caption{Triangulation of $S_2$ obtained from Icosahedron\\ \tiny{rendered with the fresnel library (\url{https://github.com/glotzerlab/fresnel})}}}
+   \end{figure}
+  \end{column}
+ \end{columns}
+\end{frame}
+
+
+\begin{frame}{Pachner Moves}
+ %Local Update Moves for Metropolis-Monte-Carlo simulations:
+ \begin{columns}[onlytextwidth,t]
+  \begin{column}{0.37\textwidth}
+   \uncover<1->{\begin{block}{Local Update Moves}
+     \vspace{0pt}
+     (Some Bullet Points to Explain the ergodic nature of the Pachner moves)
+    \end{block}}
+  \end{column}
+  \begin{column}{0.34\textwidth}
+   \begin{block}{2D}
+    \vspace{0pt}
+    \uncover<2->{\input{tikz/2DPachner-1}}\\
+    \vspace{1.0em}
+    \uncover<3->{\input{tikz/2DPachner-2}}
+   \end{block}
+  \end{column}
+  \begin{column}{0.27\textwidth}
+   \uncover<4->{\begin{block}{3D}
+     \vspace{0pt}
+     \input{tikz/3DPachner-1}\\
+     \vspace{1.0em}
+     \input{tikz/3DPachner-2}
+    \end{block}}
+  \end{column}
+ \end{columns}
+ \center{\tiny{as e.g. found in INSERT SOURCE}}
+ %https://arxiv.org/pdf/1412.8247.pdf
+\end{frame}
+
+\begin{frame}{Problems in four Dimensions}
+ \begin{columns}[onlytextwidth,t]
+  \begin{column}{0.48\textwidth}
+   \begin{block}{Causal constraint (CDT)}
+    \vspace{0pt}
+   \end{block}
+  \end{column}
+  \begin{column}{0.48\textwidth}
+   \begin{block}{Non trivial measure term}
+    \vspace{0pt}
+    Include non trivial measure term (SOURCE)
+    \begin{align*}
+     Z_E = \sum_T \frac{1}{C_T} \left[ \prod_{j=1}^{N_2} \mathcal{O} \left( t_j \right)^\beta \right] \mathrm{e}^{-S_E}
+    \end{align*}
+    with $\beta \neq 0$.
+    \begin{itemize}
+     \item $\mathcal{O}(t_j)$ is the \# 4-simplices the triangle $t_j$ belongs to
+     \item Discrete limit of $\displaystyle \left[ \mathrm{det} (-g) \right]^{\beta/2}$
+     \item Treat $\beta$ as another bare parameter
+    \end{itemize}
+   \end{block}
+  \end{column}
+ \end{columns}
+\end{frame}

@@ -1,0 +1,39 @@
+
+\begin{tikzpicture}[scale=1]
+ \def\a{1.40}
+ \def\b{0.5}
+ \def\trigConst{0.816497}
+
+
+ \begin{scope} [x     = {(1cm,0)},
+   y     = {({0.7cm*cos(135)},{-0.7cm*sin(135)})},
+   z     = {(0,1cm)}]
+
+  \path coordinate (T1) at ({-(\b + (0.5*\a))}, {0.3333*\trigConst*\a}, {\trigConst*\a})
+  coordinate (A1) at ({-\b},0,0)
+  coordinate (B1) at ({-(\a + \b)},0,0)
+  coordinate (C1) at ({-(\b + (0.5*\a))},{\trigConst*\a},0);
+
+
+  \path coordinate (T2) at ({(\b + (0.5*\a))}, {0.3333*\trigConst*\a}, {\trigConst*\a})
+  coordinate (A2) at ({\b},0,0)
+  coordinate (B2) at ({(\a + \b)},0,0)
+  coordinate (C2) at ({(\b + (0.5*\a))},{\trigConst*\a},0)
+  coordinate (D2) at ({(\b + (0.5*\a))}, {0.3333*\trigConst*\a}, {0.3333*\trigConst*\a});
+
+
+  \draw[thick]  (A1)  -- (B1) -- (C1) -- (A1) -- (T1) -- (B1);
+  \draw[thick]  (C1) -- (T1);
+
+  \draw[thick]  (A2)  -- (B2) -- (C2) -- (A2) -- (T2) -- (B2);
+  \draw[thick]  (C2) -- (T2);
+
+  \draw[thick, dashed] (A2) -- (D2);
+  \draw[thick, dashed] (B2) -- (D2);
+  \draw[thick, dashed] (C2) -- (D2);
+  \draw[thick, dashed] (T2) -- (D2);
+
+  \node[align=center] at ({0.15*\a},{0.5*\trigConst*\a},0) {$\xrightleftharpoons[(4,1)]{(1,4)}$};
+
+ \end{scope}
+\end{tikzpicture}

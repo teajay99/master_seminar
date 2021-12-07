@@ -1,0 +1,62 @@
+\usefonttheme{metropolis}
+\usefonttheme[onlymath]{serif}
+\usetheme[progressbar=frametitle,titleformat frame=smallcaps,numbering=counter]{metropolis}
+%\useoutertheme[subsection=false]{miniframes}
+\useoutertheme[subsection=false]{miniframes}
+
+\usepackage{appendixnumberbeamer}
+\setbeamercolor{progress bar}{fg=Maroon!70!Coral}
+\setbeamercolor{title separator}{fg=DarkSalmon}
+\setbeamercolor{structure}{fg=black}
+\setbeamercolor{normal text}{fg=black!87}
+\setbeamercolor{alerted text}{fg=DarkRed!60!Gainsboro}
+\setbeamercolor{example text}{fg=Maroon!70!Coral}
+
+
+\setbeamercolor{palette primary}{bg=NavyBlue!50!DarkOliveGreen, fg=white}
+\setbeamercolor{palette secondary}{bg=NavyBlue!50!DarkOliveGreen, fg=white}
+\setbeamercolor{palette tertiary}{bg=NavyBlue!40!Black, fg= white}
+\setbeamercolor{section in toc}{fg=NavyBlue!40!Black}
+
+%These next packages are the useful for Physics in general, you can add the extras here.
+\usepackage{amsmath,amssymb}
+\usepackage{slashed}
+\usepackage{cite}
+\usepackage{relsize}
+\usepackage[justification=centering]{caption}
+\usepackage{subcaption}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+\usepackage{geometry}
+\usepackage{xspace}
+\usepackage{import}
+\usepackage{siunitx}
+
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{calc}
+
+\usepackage{physics}
+\usepackage{bbold}
+\usepackage{algorithm,algcompatible}
+\renewcommand{\COMMENT}[2][.5\linewidth]{%
+ \leavevmode\hfill\makebox[#1][l]{//~#2}}
+\algnewcommand\RETURN{\State \textbf{return} }
+
+\captionsetup[figure]{labelformat=empty}
+\captionsetup[subfigure]{labelformat=empty}
+
+\usepackage{mathtools}
+
+\newcommand{\themename}{\textbf{\textsc{bluetemp}\xspace}}%metropolis}}\xspace}
+
+\newcommand<>{\uncoverubrace}[2]{%
+  \onslide#3 \underbrace{ \onslide<1->%
+  #1%
+  \onslide#3 }_{#2} \onslide<1->%
+}

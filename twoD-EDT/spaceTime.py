@@ -9,7 +9,7 @@ import trimesh
 import schedule
 import math
 
-FACE_CLR = Vec4(1.0, 0.5, 0.0, 1.0)
+FACE_CLR = Vec4(1.2 * 0.65, 1.2 * 0.15, 1.2 * 0.09, 1.0)
 LINE_CLR = Vec4(0.0, 0.0, 0.0, 1.0)
 
 TETRAHEDRON = [[0, 1], [0, 2], [0, 3], [1, 2], [1, 3], [2, 3]]
@@ -142,12 +142,10 @@ class spaceTime:
                     if j in self.triangles[t]['neighbours']:
                         triples.append([i, j, t])
 
-
         if len(triples) == 0:
             return False
         v = random.choice(triples)
         v.sort()
-
 
         commonVert = 0
         commonVertCounter = 0

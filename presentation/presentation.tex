@@ -1,0 +1,61 @@
+\documentclass[9pt,xcolor=svgnames,aspectratio=169]{beamer}
+
+\usepackage{packages}
+
+\title{Introduction to Lattice Quantum Gravity}
+\author[Name]{Timo Jakobs\\}
+%\subtitle{Subtitle}
+\institute[uni]{Helmholtz-Institut für Strahlen- und Kernphysik \\ Bethe Center for Theoretical Physics \\ University of Bonn}
+\date{\today}
+%\titlegraphic{\vspace{-0.5cm}\hfill\includegraphics[scale=0.23]{logo.png}}
+
+\begin{document}
+{
+\setbeamercolor{background canvas}{bg=NavyBlue!50!DarkOliveGreen, fg=white}
+\setbeamercolor{normal text}{fg=white}
+\maketitle
+}%This is the colour of the first slide. bg= background and fg=foreground
+\metroset{titleformat frame=smallcaps}
+
+\begin{frame}{Outline}
+ \setbeamertemplate{section in toc}[sections numbered]
+ \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{TODO}
+
+\begin{frame}{TODO}
+  \begin{itemize}
+    \item Monte Carlo Section Needed?
+    \item What needs a citation? (e.g. Pachner Moves)
+    \item How much details about results (Diagrams for spectral measurements)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{TODO - Questions}
+  \begin{itemize}
+    \item Check and Add Sources
+  \end{itemize}
+\end{frame}
+
+\section{Regge Action}
+
+\input{regge-action}
+
+\section{Observables}
+
+\input{observables}
+
+\section{Conclusion}
+
+\begin{frame}
+ \resizebox{0.5\textwidth}{!}{The End - Thanks for listening}\\
+ \vspace{0.5cm}
+ Code can be found at:
+\end{frame}
+
+\appendix
+
+\input{sec_bonus}
+
+\end{document}
