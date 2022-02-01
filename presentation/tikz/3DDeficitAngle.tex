@@ -1,0 +1,51 @@
+\begin{tikzpicture}[scale=1]
+ \def\a{1.2}
+
+ \begin{scope} [x     = {(1cm,0)},
+   y     = {({0.7cm*cos(135)},{-0.7cm*sin(135)})},
+   z     = {(0,1cm)}]
+
+
+  \path coordinate (CB) at (0,0,0)
+  coordinate (CT) at (0,0,1.2*\a)
+  coordinate (AB) at (0.7*\a,0.7*\a,0)
+  coordinate (AT) at (0.7*\a,0.7*\a,1.2*\a)
+  coordinate (BB) at (0,\a,0)
+  coordinate (BT) at (0,\a,1.2*\a)
+  coordinate (DB) at (\a,0,0)
+  coordinate (DT) at (\a,0,1.2*\a)
+  coordinate (FB) at (-\a,0,0)
+  coordinate (FT) at (-\a,0,1.2*\a)
+  coordinate (EB) at (0,-\a,0)
+  coordinate (ET) at (0,-\a,1.2*\a);
+
+
+  \draw[thick, dashed]  (CT) -- (CB);
+
+  \draw[thick]  (AT) -- (CT);
+  \draw[thick]  (AB) -- (CB);
+  \draw[dotted] (AB) -- (AT);
+
+  \draw[thick]  (BT) -- (CT);
+  \draw[thick]  (BB) -- (CB);
+  \draw[dotted] (BB) -- (BT);
+
+  \draw[thick,dotted]  (DT) -- (CT);
+  \draw[thick,dotted]  (DB) -- (CB);
+  \draw[dotted] (DB) -- (DT);
+
+  \draw[thick,dotted]  (ET) -- (CT);
+  \draw[thick,dotted]  (EB) -- (CB);
+  \draw[dotted] (EB) -- (ET);
+
+  \draw[thick,dotted]  (FT) -- (CT);
+  \draw[thick,dotted]  (FB) -- (CB);
+  \draw[dotted] (FB) -- (FT);
+
+  \draw[thick,->] (0.3*\a,0,0.6*\a) arc [start angle=60,end angle=105, radius=0.8*\a,y radius=0.8*\a];
+
+  \node(e)[] at (0.3*\a,0.3*\a,0.5*\a) {$\varepsilon_i$};
+
+ \end{scope}
+
+\end{tikzpicture}

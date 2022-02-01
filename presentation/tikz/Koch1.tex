@@ -1,0 +1,48 @@
+\begin{tikzpicture}[decoration=Koch snowflake]
+ \def\a{0.2}
+
+ %Fractals
+ \uncover<1>{\draw[thick] (0,0) -- (27*\a,0);}
+ \uncover<2>{\draw[thick] decorate{ (0,0) -- (27*\a,0)};}
+ \uncover<3>{\draw[thick] decorate { decorate{ (0,0) -- (27*\a,0)}};}
+ \uncover<4>{\draw[thick] decorate {decorate { decorate{ (0,0) -- (27*\a,0)}}};}
+ \uncover<5->{\draw[thick] decorate {decorate {decorate { decorate{ (0,0) -- (27*\a,0)}}}};}
+
+ %Coverings
+ \only<6>{\draw[thick,dashed] (0,13.5*\a) -- (27*\a,13.5*\a) -- (27*\a,-13.5*\a) -- (0,-13.5*\a) -- (0,13.5*\a); }
+ \only<7>{
+  \draw[thick,dashed] (0, -4.5 * \a) -- (9*\a, -4.5 * \a) -- (9*\a, 4.5 * \a) -- (0, 4.5 * \a) -- (0, -4.5 * \a);
+  \draw[thick,dashed] (9 * \a, -4.5 * \a) -- (18*\a, -4.5 * \a) -- (18*\a, 4.5 * \a) -- (9 * \a, 4.5 * \a) -- (9 * \a, -4.5 * \a);
+  \draw[thick,dashed] (18 * \a, -4.5 * \a) -- (27*\a, -4.5 * \a) -- (27*\a, 4.5 * \a) -- (18 * \a, 4.5 * \a) -- (18 * \a, -4.5 * \a);
+ }
+ \uncover<7>{\draw[thick,dashed] (9 * \a, 4.5 * \a) -- (18*\a, 4.5 * \a) -- (18*\a, 13.5 * \a) -- (9 * \a, 13.5 * \a) -- (9 * \a, 4.5 * \a);}
+ \only<8->{
+  \draw[thick,dashed] (0, -1.5 * \a) -- (3*\a, -1.5 * \a) -- (3*\a, 1.5 * \a) -- (0, 1.5 * \a) -- (0, -1.5 * \a);
+  \draw[thick,dashed] (3*\a, -1.5 * \a) -- (6*\a, -1.5 * \a) -- (6*\a, 1.5 * \a) -- (3*\a, 1.5 * \a) -- (3*\a, -1.5 * \a);
+  \draw[thick,dashed] (6*\a, -1.5 * \a) -- (9*\a, -1.5 * \a) -- (9*\a, 1.5 * \a) -- (6*\a, 1.5 * \a) -- (6*\a, -1.5 * \a);
+  \draw[thick,dashed] (6*\a, -1.5 * \a) -- (9*\a, -1.5 * \a) -- (9*\a, 1.5 * \a) -- (6*\a, 1.5 * \a) -- (6*\a, -1.5 * \a);
+  \draw[thick,dashed] (9*\a, -1.5 * \a) -- (12*\a, -1.5 * \a) -- (12*\a, 1.5 * \a) -- (9*\a, 1.5 * \a) -- (9*\a, -1.5 * \a);
+
+  \draw[thick,dashed] (3*\a, 1.5 * \a) -- (6*\a, 1.5 * \a) -- (6*\a, 4.5 * \a) -- (3*\a, 4.5 * \a) -- (3*\a, 1.5 * \a);
+  \draw[thick,dashed] (9*\a, 1.5 * \a) -- (12*\a, 1.5 * \a) -- (12*\a, 4.5 * \a) -- (9*\a, 4.5 * \a) -- (9*\a, 1.5 * \a);
+
+  \draw[thick,dashed] (9*\a, 4.5 * \a) -- (12*\a, 4.5 * \a) -- (12*\a, 7.5 * \a) -- (9*\a, 7.5 * \a) -- (9*\a, 4.5 * \a);
+
+
+  \draw[thick,dashed] (15*\a, -1.5 * \a) -- (18*\a, -1.5 * \a) -- (18*\a, 1.5 * \a) -- (15*\a, 1.5 * \a) -- (15*\a, -1.5 * \a);
+  \draw[thick,dashed] (18*\a, -1.5 * \a) -- (21*\a, -1.5 * \a) -- (21*\a, 1.5 * \a) -- (18*\a, 1.5 * \a) -- (18*\a, -1.5 * \a);
+  \draw[thick,dashed] (21*\a, -1.5 * \a) -- (24*\a, -1.5 * \a) -- (24*\a, 1.5 * \a) -- (21*\a, 1.5 * \a) -- (21*\a, -1.5 * \a);
+  \draw[thick,dashed] (24*\a, -1.5 * \a) -- (27*\a, -1.5 * \a) -- (27*\a, 1.5 * \a) -- (24*\a, 1.5 * \a) -- (24*\a, -1.5 * \a);
+
+  \draw[thick,dashed] (15*\a, 1.5 * \a) -- (18*\a, 1.5 * \a) -- (18*\a, 4.5 * \a) -- (15*\a, 4.5 * \a) -- (15*\a, 1.5 * \a);
+  \draw[thick,dashed] (21*\a, 1.5 * \a) -- (24*\a, 1.5 * \a) -- (24*\a, 4.5 * \a) -- (21*\a, 4.5 * \a) -- (21*\a, 1.5 * \a);
+
+  \draw[thick,dashed] (15*\a, 4.5 * \a) -- (18*\a, 4.5 * \a) -- (18*\a, 7.5 * \a) -- (15*\a, 7.5 * \a) -- (15*\a, 4.5 * \a);
+
+
+  \draw[thick,dashed] (12*\a, 4.5 * \a) -- (15*\a, 4.5 * \a) -- (15*\a, 7.5 * \a) -- (12*\a, 7.5 * \a) -- (12*\a, 4.5 * \a);
+  \draw[thick,dashed] (12*\a, 7.5 * \a) -- (15*\a, 7.5 * \a) -- (15*\a, 10.5 * \a) -- (12*\a, 10.5 * \a) -- (12*\a, 7.5 * \a);
+
+ }
+
+\end{tikzpicture}

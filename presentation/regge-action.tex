@@ -1,83 +1,131 @@
 
-\begin{frame}{What the heck is quantum gravity anyway?}
- \begin{columns}[onlytextwidth,t]
-  \uncover<1->{\begin{column}{0.48\textwidth}
-    \begin{block}{Classical Gravity}
-     \vspace{0pt}
-     Einstein Field equations:
-     \begin{align*}
-      \uncoverubrace<2->{\frac{8 \pi G}{c^4}}{\kappa}\uncoverubrace<2->{T_{\mu\nu}}{\substack{\text{stuff within} \\  \text{space-time}}} & = \uncoverubrace<2->{R_{\mu\nu} - \frac{1}{2} R g_{\mu\nu} + \Lambda g_{\mu \nu}}{\text{geometry of space-time}}
-      \uncover<3->{\intertext{Einstein Hilbert Action (for $T_{\mu\nu} = 0$):}
-      S_{EH} [g] & = \frac{1}{2 \kappa} \int \mathrm{d}^4 x \sqrt{-\mathrm{det} \, g} \, (R - 2\Lambda)}
-     \end{align*}
-    \end{block}
-   \end{column}}
-  \begin{column}{0.48\textwidth}
-   \uncover<4->{\begin{block}{Quantum Gravity}
-     \vspace{0pt}
-     Path integral formulation:
-     \begin{align*}
-      Z_E & = \int \mathcal{D} g \, \exp \left( - S[g]\right)
-     \end{align*}
-    \end{block}}
-   \uncover<5->{\textbf{Problems}
+\begin{frame}{Simplical Gravity}
+ \begin{columns}
+  \begin{column}{0.52\textwidth}
+   \begin{block}{Simplical Gravity - Regge Action}
+    \vspace{0pt}
     \begin{itemize}
-     \item non renormalizable coupling expansion
-     \item might still be asymptotically safe \\ $\Rightarrow$ non-pertubative approaches
-    \end{itemize}}
+     \item Geometry described by:\\
+           $\qquad$ metric $g_{\mu\nu}$ $\rightarrow$ triangulation $T$
+           \uncover<2->{\item Regge Action:
+           \begin{align*}
+            S_{\textrm{R}} & = - \kappa \sum_{i=1}^{N_2} \mathrm{Vol}(\sigma_i^2) \varepsilon_i + \kappa \Lambda \sum_{i=1}^{N_4} \mathrm{Vol}(\sigma_i^4)     \intertext{where}
+            N_j            & \equiv \#j\text{-simplices}                                                                                                                         \\
+            \varepsilon_i  & \equiv \text{deficit angle at hinge}\,\, i                                                                                                          \\
+            \sigma_i^j     & \equiv i\text{th}\,\, j\text{-Simplex}
+           \end{align*}}
+    \end{itemize}
+   \end{block}
+  \end{column}
+  \begin{column}{0.46\textwidth}
+   \begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{pics/triangulation-fib.png}
+   \end{figure}
+   \only<1-3>{\uncover<3>{\begin{block}{2D}
+     \vspace{-0.5cm}
+     \centering
+     \input{tikz/2DDeficitAngle}
+    \end{block}}}
+   \only<4>{\begin{block}{3D}
+     \vspace{-0.5cm}
+     \centering
+     \input{tikz/3DDeficitAngle}
+    \end{block}}
   \end{column}
  \end{columns}
 \end{frame}
 
-
-\begin{frame}{Triangulations}
+\begin{frame}{Simplical Gravity}
  \begin{columns}
-  \begin{column}{0.38\textwidth}
-   \begin{block}{Discretisation of $Z_E$}
+  \begin{column}{0.52\textwidth}
+   \begin{block}{Further Restrictions}
     \vspace{0pt}
-    \uncover<1->{Approximate space-time Manifold by triangulation}
-    \uncover<2->{\begin{align*}
-      \underbrace{\int \mathcal{D}g}_{\substack{\text{Integral over possible} \\ \text{metric tensors}}} \longrightarrow \underbrace{\sum_T \frac{1}{C_T}}_{\substack{\text{Sum over possible}\\ \text{triangulations}}}
-     \end{align*}}
-    \uncover<3->{Only equilateral triangles (simplices)}
-    \uncover<4->{\begin{align*}
-      S_E & = -\kappa_2(\kappa) N_2 + \kappa_4(\kappa, \Lambda) N_4
+    \begin{itemize}
+     \item Restriction to equilateral simplices with side length $a$
+     \item Lattice action:\begin{align*}
+            S_{ER} = - \kappa_2(\kappa,a) N_2 + \kappa_4(\kappa,\Lambda, a) N_4 + \lambda\abs{N_4 - V}
+           \end{align*}
+     \item Triangulations only differ by number and configuration of simplices
+    \end{itemize}
+    \begin{block}{Partition Function:}
+     \vspace{0pt}
+     \begin{align*}
+      Z_E = \sum_{\boldsymbol{T}} \frac{1}{C_T} \mathrm{e}^{-S_{ER}}
      \end{align*}
-     where $N_k$ is the number of $k$-simplices in  $T$}
+    \end{block}
    \end{block}
   \end{column}
-  \begin{column}{0.60\textwidth}
+  \begin{column}{0.46\textwidth}
    \begin{figure}
     \centering
-    \only<1-2>{\includegraphics[width=\textwidth]{pics/triangulation-fib.png}
-     \caption{Triangulation of $S_2$ obtained by the Fibonacci Lattice\\ \tiny{rendered with the fresnel library (\url{https://github.com/glotzerlab/fresnel})}}}
-    \only<3-4>{\includegraphics[width=\textwidth]{pics/triangulation-ico.png}
-     \caption{Triangulation of $S_2$ obtained from Icosahedron\\ \tiny{rendered with the fresnel library (\url{https://github.com/glotzerlab/fresnel})}}}
+    \includegraphics[width=0.9\textwidth]{pics/triangulation-ico.png}
+    \caption{\tiny{rendered with the fresnel library (\url{https://github.com/glotzerlab/fresnel})}}
    \end{figure}
   \end{column}
  \end{columns}
 \end{frame}
 
+\begin{frame}{Metropolis Monte Carlo Methods}
+ \begin{columns}
+  \begin{column}{0.46\textwidth}
+   \uncover<1->{\vspace{0.5cm}\\Used to solve path integrals numerically:
+    \begin{align*}
+     \left\langle \mathcal{O} \right\rangle & = \frac{1}{Z}\sum_{\boldsymbol{T}} \frac{1}{C_T} \, \mathcal{O} \exp \left( - S(\boldsymbol{T})\right)
+    \end{align*}}
+   \uncover<2->{$\left\langle \mathcal{O} \right\rangle$  approximated by generating random  configuration $\boldsymbol{T}$ with distribution
+    \begin{align*}
+     \rho (\boldsymbol{T})                  & = \frac{1}{Z} \exp \left( - S(\boldsymbol{U})\right) \intertext{and thus}
+     \left\langle \mathcal{O} \right\rangle & = \frac{1}{\#\{ \boldsymbol{T}\}} \sum_{\boldsymbol{T} \in \{ \boldsymbol{T}\}} \mathcal{O}(\boldsymbol{T})
+    \end{align*}}
+  \end{column}
+  \begin{column}{0.52\textwidth}
+   \begin{algorithmic}[1]
+    \uncover<3->{\STATE {$\boldsymbol{T}\leftarrow$ (\text{initial configuration})}}
+    \uncover<4->{\FOR {$N$ iterations}}
+    \uncover<5->{\STATE {$\boldsymbol{T}' \leftarrow \text{update}(\boldsymbol{T})$}}
+    \uncover<6->{\STATE {$\Delta S \leftarrow S(\boldsymbol{T}) - S(\boldsymbol{T}')$}}
+    \uncover<7->{\IF {$\Delta S < 0 \, \text{or} \, \exp \left(- \Delta S \right) > \text{rand}(0,1)$}}
+    \uncover<7->{\STATE $\boldsymbol{T} \leftarrow \boldsymbol{T}'$}
+    \uncover<7->{\ENDIF}
+    \uncover<8->{\STATE measure observables}
+    \uncover<4->{\ENDFOR}
+   \end{algorithmic}
+  \end{column}
+ \end{columns}
+\end{frame}
 
 \begin{frame}{Pachner Moves}
  %Local Update Moves for Metropolis-Monte-Carlo simulations:
  \begin{columns}[onlytextwidth,t]
   \begin{column}{0.37\textwidth}
-   \uncover<1->{\begin{block}{Local Update Moves}
+   \uncover<1->{\begin{block}{Requirements for updates}
      \vspace{0pt}
-     (Some Bullet Points to Explain the ergodic nature of the Pachner moves)
+     \begin{itemize}
+      \uncover<2->{\item maintain topology}
+            \uncover<3->{\item relate all triangulations with same topology}
+     \end{itemize}
+     \uncover<4->{$\qquad\longrightarrow$ Ergodicity}
+    \end{block}}
+   \vspace{0.5cm}
+   \uncover<8->{\begin{block}{4D}
+     \vspace{0pt}
+     \begin{itemize}
+      \item 5 Pachner moves in 4D:\\
+            $(1,5)$,$(2,4)$,$(3,3)$,$(4,2)$,$(5,1)$
+     \end{itemize}
     \end{block}}
   \end{column}
-  \begin{column}{0.34\textwidth}
-   \begin{block}{2D}
-    \vspace{0pt}
-    \uncover<2->{\input{tikz/2DPachner-1}}\\
-    \vspace{1.0em}
-    \uncover<3->{\input{tikz/2DPachner-2}}
-   \end{block}
-  \end{column}
+  \uncover<5->{\begin{column}{0.34\textwidth}
+    \begin{block}{2D}
+     \vspace{0pt}
+     \uncover<5->{\input{tikz/2DPachner-1}}\\
+     \vspace{1.0em}
+     \uncover<6->{\input{tikz/2DPachner-2}}
+    \end{block}
+   \end{column}}
   \begin{column}{0.27\textwidth}
-   \uncover<4->{\begin{block}{3D}
+   \uncover<7->{\begin{block}{3D}
      \vspace{0pt}
      \input{tikz/3DPachner-1}\\
      \vspace{1.0em}
@@ -85,23 +133,17 @@
     \end{block}}
   \end{column}
  \end{columns}
- \center{\tiny{as e.g. found in INSERT SOURCE}}
- %https://arxiv.org/pdf/1412.8247.pdf
+ \uncover<5->{\center{\tiny{As e.g. found in: Banburski, Chen, Freidel, Hnybida \emph{PhysRevD.92.124014}}}}
 \end{frame}
 
 \begin{frame}{Problems in four Dimensions}
- \begin{columns}[onlytextwidth,t]
+ \begin{columns}
   \begin{column}{0.48\textwidth}
-   \begin{block}{Causal constraint (CDT)}
+   \uncover<2->{\begin{block}{Non trivial measure term}
     \vspace{0pt}
-   \end{block}
-  \end{column}
-  \begin{column}{0.48\textwidth}
-   \begin{block}{Non trivial measure term}
-    \vspace{0pt}
-    Include non trivial measure term (SOURCE)
+    {\tiny{(Laiho, Bassler, Coumbe, Du, Neelakanta \emph{PhysRevD.96.064015})}}
     \begin{align*}
-     Z_E = \sum_T \frac{1}{C_T} \left[ \prod_{j=1}^{N_2} \mathcal{O} \left( t_j \right)^\beta \right] \mathrm{e}^{-S_E}
+     Z_E = \sum_T \frac{1}{C_T} \left[ \prod_{j=1}^{N_2} \mathcal{O} \left( t_j \right)^\beta \right] \mathrm{e}^{-S_{ER}}
     \end{align*}
     with $\beta \neq 0$.
     \begin{itemize}
@@ -109,7 +151,19 @@
      \item Discrete limit of $\displaystyle \left[ \mathrm{det} (-g) \right]^{\beta/2}$
      \item Treat $\beta$ as another bare parameter
     \end{itemize}
-   \end{block}
+   \end{block}}
+  \end{column}
+  \begin{column}{0.48\textwidth}
+   \uncover<3->{\begin{block}{Other solutions}
+    \vspace{0pt}
+    \begin{itemize}
+     \item Causal Dynamical Triangulations
+           \begin{itemize}
+            \item distinguish between space and time links
+            \item various causality constraint
+           \end{itemize}
+    \end{itemize}
+   \end{block}}
   \end{column}
  \end{columns}
 \end{frame}

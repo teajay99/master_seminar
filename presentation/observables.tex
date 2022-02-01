@@ -1,80 +1,207 @@
 
-\begin{frame}{Phase Diagram of EDT and the Continuum limit}
+\begin{frame}{Phase Diagram of EDT}
+ \begin{columns}
+  \begin{column}{0.45\textwidth}
+   \begin{align*}
+    S_{ER} = - \kappa_2(\kappa,a) N_2 + \kappa_4(\kappa,\Lambda, a) N_4 + \lambda\abs{N_4 - V}
+   \end{align*}
+   \begin{block}{Physical Limits}
+    \vspace{0pt}
+    \begin{itemize}
+     \uncover<2->{\item $\kappa_4$ sets scale and cosmological constant (continuum limit)}
+           \uncover<3->{\item $V \rightarrow \infty$ for infinite Volume}
+           \uncover<4->{\item $(\beta,\kappa_2) \rightarrow \infty$ just to the left of first order phase transition $\overline{AB}$}
+    \end{itemize}
+   \end{block}
+  \end{column}
+  \begin{column}{0.53\textwidth}
+   \uncover<4->{\begin{figure}
+     \includegraphics[width=\textwidth]{pics/phase-diagram}
+     \caption{\tiny{As found in: Laiho, Bassler, Coumbe, Du, Neelakanta \emph{PhysRevD.96.064015}}}
+    \end{figure}}
+  \end{column}
+ \end{columns}
+\end{frame}
+
+\begin{frame}{Vertex Count}
  \begin{figure}
-  \includegraphics[width=0.6\textwidth]{pics/phase-diagram}
-  \caption{SOURCE}
+  \centering
+  \includegraphics[width=0.8\textwidth]{pics/VertexCount}
+  \caption{\tiny{As found in: Laiho, Bassler, Coumbe, Du, Neelakanta \emph{PhysRevD.96.064015}}}
  \end{figure}
+\end{frame}
+
+
+\begin{frame}{Fractal Dimensions}
+ \begin{columns}%[onlytextwidth,t]
+  \begin{column}{0.35\textwidth}
+   \begin{block}{Box Counting Dimensions}
+    \vspace{0pt}
+    \begin{align*}
+     d_{\textrm{box}} & = \lim_{\epsilon \rightarrow 0} \frac{\log(N(\varepsilon))}{\log(1/\varepsilon)}
+    \end{align*}\\
+    (Similar to Hausdorf dimension $d_H$)
+   \end{block}
+  \end{column}
+  \uncover<2->{\begin{column}{0.32\textwidth}
+    \begin{block}{Line}
+     \vspace{0pt}
+     \begin{center}
+      \input{tikz/1DBoxCounting1}\\
+      \vspace{0.2cm}
+      \uncover<4->{\input{tikz/1DBoxCounting2}}\\
+      \vspace{0.2cm}
+      \uncover<5->{\input{tikz/1DBoxCounting3}}
+     \end{center}
+     \uncover<6->{\begin{align*}
+       N(\epsilon) \sim \frac{1}{\varepsilon} \, \Rightarrow \, d_{\textrm{box}} & = 1
+      \end{align*}}
+    \end{block}
+   \end{column}}
+  \uncover<7->{\begin{column}{0.32\textwidth}
+    \begin{block}{Plane}
+     \vspace{0pt}
+     \begin{center}
+      \input{tikz/2DBoxCounting}\\
+     \end{center}
+     \begin{align*}
+      N(\epsilon) \sim \frac{1}{\varepsilon^2} \, \Rightarrow \, d_{\textrm{box}} & = 2
+     \end{align*}
+    \end{block}
+   \end{column}}
+ \end{columns}
+\end{frame}
+
+\begin{frame}{Box counting dimension}
+ \begin{columns}[onlytextwidth,t]
+  \begin{column}{0.48\textwidth}
+   \begin{block}{Koch Snow Flake}
+    \vspace{0pt}
+    \begin{center}
+     \input{tikz/Koch1}\\
+    \end{center}
+    \uncover<9->{\begin{align*}
+      N(\epsilon) \sim \varepsilon^{-\log_3 (4)} & = \left(\frac{1}{\varepsilon}\right)^{ \frac{\log4}{\log3}} \\
+      \Rightarrow \, \, d_{\textrm{box}}         & = \frac{\log 4}{\log 3} \approx 1.262
+     \end{align*}}
+   \end{block}
+  \end{column}
+  \begin{column}{0.48\textwidth}
+   \uncover<10->{\begin{block}{Coastlines}
+    \vspace{0pt}
+    \begin{figure}
+     \centering
+     \includegraphics[width=\textwidth]{pics/Great_Britain_Box}
+     \caption{\tiny{Source: \url{https://commons.wikimedia.org/wiki/File:Great_Britain_Box.svg}} }
+    \end{figure}
+    \uncover<11->{\vspace{-0.8cm}
+     \begin{align*}
+      d_{\textrm{box}} \approx 1.215
+     \end{align*}}}
+    %    % Germany: 1.111
+    %    % United Kingdom: 1.215
+    %    % Norway: 1.372
+   \end{block}
+  \end{column}
+ \end{columns}
 \end{frame}
 
 \begin{frame}{Fractal Dimension of the triangulation}
  \begin{columns}
-  \begin{column}{0.38\textwidth}
-   \begin{figure}
-    \centering
-    \begin{subfigure}{0.32\textwidth}
-     \includegraphics[width=\textwidth]{pics/Britain-fractal-coastline-200km}
-     \caption{$\varepsilon=\SI{200}{km}$}
-    \end{subfigure}
-    \begin{subfigure}{0.32\textwidth}
-     \includegraphics[width=\textwidth]{pics/Britain-fractal-coastline-100km}
-     \caption{$\varepsilon=\SI{100}{km}$}
-    \end{subfigure}
-    \begin{subfigure}{0.32\textwidth}
-     \includegraphics[width=\textwidth]{pics/Britain-fractal-coastline-50km}
-     \caption{$\varepsilon=\SI{50}{km}$}
-    \end{subfigure}
-    \caption{\tiny{Source: \url{https://commons.wikimedia.org/wiki/File:Britain-fractal-coastline-combined.jpg}}}
-   \end{figure}
-   % Germany: 1.111
-   % United Kingdom: 1.215
-   % Norway: 1.372
-  \end{column}
   \begin{column}{0.58\textwidth}
-   \begin{block}{Fractal Dimensions}
+   \begin{block}{Scaling of different Observables as function of $N_4$}
     \vspace{0pt}
-    \begin{itemize}
-     \item Quantifies ''roughness'' of surface
-     \item Expect $d=4$ in continuum limit
-    \end{itemize}
-    \textbf{Box-Counting Dimension}
     \begin{align*}
-     d_{\textrm{box}} & = \lim_{\epsilon \rightarrow 0} \frac{\log(N(\varepsilon))}{\log(1/\varepsilon)}
-     \intertext{\textbf{Hausdorff Dimension}}
-     d_H              & = \lim_{r \rightarrow 0} \frac{\log\left(V(r)\right)}{\log(r)}
+     N_4^{\textrm{shell}} (\tau) = \parbox{0.55\textwidth}{\# four-simplices within spherical shell of radius $\tau$}
     \end{align*}
-    where $V(r)$ is the volume of a sphere with radius $r$.
+    \vspace{-0.4cm}
+    \begin{itemize}
+     %\item 3D volume as a function of euclidian time $\tau$
+     \uncover<2->{\item Expect 3D volume to scale with $\sim (N_4)^{3/4}$}
+           \uncover<3->{\item Expect Radius (1D volume) to scale with $\sim (N_4)^{1/4}$\\
+           $\rightarrow$ scale invariant radius $\rho = 1/N_4^{1/d}$}
+    \end{itemize}
+    \uncover<4->{\begin{align*}
+      N_4^{\textrm{shell}} \rightarrow n_4^{\textrm{shell}}(N_4,d) & = \frac{1}{N_4^{1-1/d}} N_4^{\textrm{shell}} (N_4^{1/d} \rho)
+     \end{align*}
+     Expect $n_4(N_4) = \mathrm{const}$ for $d=d_H$}
    \end{block}
+  \end{column}
+  \begin{column}{0.4\textwidth}
+   \uncover<5->{\centering
+   \begin{figure}
+    \includegraphics[width=0.9\textwidth]{pics/Hausdorf1}
+    %\includegraphics[height=0.47\textwidth]{pics/Hausdorf2}
+    \caption{\tiny{As found in: Laiho, Bassler, Coumbe, Du, Neelakanta \emph{PhysRevD.96.064015}}}
+   \end{figure}
+   $\longrightarrow \quad d_H = 4.1 \pm 0.3$}
   \end{column}
  \end{columns}
 \end{frame}
-\begin{frame}{Fractal Dimensions}
- \begin{columns}[onlytextwidth,t]
-  \begin{column}{0.48\textwidth}
-   \begin{block}{Measuring the Hausdorff Dimension}
 
-   \end{block}
-  \end{column}
+\begin{frame}{Classical Limit}
+ \begin{columns}
   \begin{column}{0.48\textwidth}
    \begin{block}{de Sitter Solution}
-
+    \vspace{0pt}
+    \begin{itemize}
+     \item symmetric vacuum solution of gravity
+     \item equivalent to $S_3$ (in euclidian space-time)
+           \begin{align*}
+            \rightarrow n_4^{\textrm{shell}} (\rho) \sim \sin^3 \left(  \frac{\rho}{s_0(N_4)^{1/4}} \right)
+           \end{align*}
+    \end{itemize}
    \end{block}
+   \uncover<3->{\begin{block}{Spectral Dimension}
+    \vspace{0pt}
+    \begin{itemize}
+     \item Dimension defined by diffusion process
+           \begin{align*}
+            D_S = - 2 \frac{\mathrm{d} \log \left\langle P(\sigma) \right\rangle}{\mathrm{d} \log \sigma}
+           \end{align*}
+           with return $P(\sigma)$ probability after $\sigma$ diffusion steps
+     \item $d_S \approx 4$ at large scales, $D_S \approx \frac{3}{2}$
+    \end{itemize}
+   \end{block}}
+  \end{column}
+  \begin{column}{0.48\textwidth}
+   \uncover<2->{\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{pics/deSitter}
+    \caption{\tiny{As found in: Laiho, Bassler, Coumbe, Du, Neelakanta \emph{PhysRevD.96.064015}}}
+   \end{figure}}
   \end{column}
  \end{columns}
 \end{frame}
 
-\begin{frame}
- \begin{columns}[onlytextwidth,t]
+\begin{frame}{Phase Diagram of EDT}
+ \begin{columns}
   \begin{column}{0.48\textwidth}
-   \begin{block}{Spectral Dimensions}
-    \begin{align*}
-      d_S = \frac{\mathrm{d} \log \left\langle P(\sigma) \right\rangle}{\mathrm{d} \log \sigma}
-    \end{align*}
-   \end{block}
+   \begin{itemize}
+    \uncover<2->{\item Collapsed Phase
+          \begin{itemize}
+           \item $d_H \rightarrow \infty$, $d_s \rightarrow \infty$
+           \item Few strongly connected vertices
+          \end{itemize}}
+          \uncover<3->{\item Branched Polymer Phase
+          \begin{itemize}
+           \item $d_H = 2$, $d_S=\frac{4}{3}$
+           \item Baby universe branching
+          \end{itemize}}
+          \uncover<4->{\item Crinkled region in between
+          \begin{itemize}
+           \item shares features of both previous phases
+           \item no distinct phase transition
+          \end{itemize}}
+   \end{itemize}
+   \vspace{0.2cm}
+   \uncover<4->{Physical limit when following $\overline{AB}$ to $\infty$}
   \end{column}
   \begin{column}{0.48\textwidth}
-   \begin{block}{}
-
-   \end{block}
+   \uncover<1->{\begin{figure}
+     \includegraphics[width=\textwidth]{pics/phase-diagram}
+     \caption{\tiny{As found in: Laiho, Bassler, Coumbe, Du, Neelakanta \emph{PhysRevD.96.064015}}}
+    \end{figure}}
   \end{column}
  \end{columns}
 \end{frame}

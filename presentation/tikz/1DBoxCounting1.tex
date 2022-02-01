@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+ \def\a{1.1}
+
+ %Line
+ \draw[thick] (-1.6*\a, 0) -- (1.6*\a, 0);
+
+ %Boxes
+ \uncover<3->{
+  \draw[thick,dashed] (-1.5*\a, 0.75*\a) -- (0, 0.75*\a) -- (0, -0.75*\a) -- (-1.5*\a, -0.75*\a) -- (-1.5*\a, 0.75*\a);
+  \draw[thick,dashed] (1.5*\a, 0.75*\a) -- (0*\a, 0.75*\a) -- (0*\a, -0.75*\a) -- (1.5*\a, -0.75*\a) -- (1.5*\a, 0.75*\a);
+  \draw [decorate,decoration={brace,amplitude=5pt},yshift=2pt] (0, 0.75*\a) -- (1.5*\a, 0.75*\a) node [black,midway,yshift=0.35cm]
+{\footnotesize $\varepsilon$};
+ }
+
+\end{tikzpicture}

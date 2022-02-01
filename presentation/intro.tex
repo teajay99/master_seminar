@@ -1,0 +1,30 @@
+
+\begin{frame}{What the heck is quantum gravity anyway?}
+ \begin{columns}[onlytextwidth,t]
+  \uncover<1->{\begin{column}{0.48\textwidth}
+    \begin{block}{Classical Gravity}
+     \vspace{0pt}
+     Einstein Field equations:
+     \begin{align*}
+      \uncoverubrace<2->{\frac{8 \pi G}{c^4}}{\kappa}\uncoverubrace<2->{T_{\mu\nu}}{\substack{\text{stuff within} \\  \text{space-time}}} & = \uncoverubrace<2->{R_{\mu\nu} - \frac{1}{2} R g_{\mu\nu} + \Lambda g_{\mu \nu}}{\text{geometry of space-time}}
+      \uncover<3->{\intertext{Einstein Hilbert Action (for $T_{\mu\nu} = 0$):}
+      S_{EH} [g] & = -\frac{1}{2 \kappa} \int \mathrm{d}^4 x \sqrt{-\mathrm{det} \, g} \, (R - 2\Lambda)}
+     \end{align*}
+    \end{block}
+   \end{column}}
+  \begin{column}{0.48\textwidth}
+   \uncover<4->{\begin{block}{Quantum Gravity}
+     \vspace{0pt}
+     Path integral formulation:
+     \begin{align*}
+      Z_E & = \int \mathcal{D} g \, \exp \left( - S[g]\right)
+     \end{align*}
+    \end{block}}
+   \uncover<5->{\textbf{Problems}
+    \begin{itemize}
+     \item non renormalizable coupling expansion
+     \item might still be asymptotically safe \\ $\Rightarrow$ non-pertubative approaches
+    \end{itemize}}
+  \end{column}
+ \end{columns}
+\end{frame}

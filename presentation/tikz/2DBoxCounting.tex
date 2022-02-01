@@ -1,0 +1,32 @@
+\begin{tikzpicture}[scale=1]
+ \def\a{1.2}
+
+ \begin{scope} [x     = {(1cm,0)},
+   y     = {({0.7cm*cos(135)},{-0.7cm*sin(135)})},
+   z     = {(0,1cm)}]
+
+   \draw[thick] (1.1*\a,0.5*\a,1.1*\a) -- (-1.1*\a,0.5*\a,1.1*\a) -- (-1.1*\a,0.5*\a,-1.1*\a) -- (1.1*\a,0.5*\a,-1.1*\a) -- (1.1*\a,0.5*\a,1.1*\a);
+
+  \draw[thick,dashed] (\a,\a,\a) -- (0,\a,\a) -- (0,0,\a) -- (\a,0,\a) -- (\a,\a,\a) -- (\a,\a,0) -- (0,\a,0) -- (0,0,0) -- (\a,0,0) -- (\a,\a,0);
+  \draw[thick,dashed] (0,\a,\a) -- (0,\a,0);
+  \draw[thick,dashed] (0,0,\a) -- (0,0,0);
+  \draw[thick,dashed] (\a,0,\a) -- (\a,0,0);
+
+  \draw[thick,dashed] (-\a,\a,\a) -- (0,\a,\a) -- (0,0,\a) -- (-\a,0,\a) -- (-\a,\a,\a) -- (-\a,\a,0) -- (0,\a,0) -- (0,0,0) -- (-\a,0,0) -- (-\a,\a,0);
+  \draw[thick,dashed] (0,\a,\a) -- (0,\a,0);
+  \draw[thick,dashed] (0,0,\a) -- (0,0,0);
+  \draw[thick,dashed] (-\a,0,\a) -- (-\a,0,0);
+
+  \draw[thick,dashed] (\a,\a,-\a) -- (0,\a,-\a) -- (0,0,-\a) -- (\a,0,-\a) -- (\a,\a,-\a) -- (\a,\a,0) -- (0,\a,0) -- (0,0,0) -- (\a,0,0) -- (\a,\a,0);
+  \draw[thick,dashed] (0,\a,-\a) -- (0,\a,0);
+  \draw[thick,dashed] (0,0,-\a) -- (0,0,0);
+  \draw[thick,dashed] (\a,0,-\a) -- (\a,0,0);
+
+  \draw[thick,dashed] (-\a,\a,-\a) -- (0,\a,-\a) -- (0,0,-\a) -- (-\a,0,-\a) -- (-\a,\a,-\a) -- (-\a,\a,0) -- (0,\a,0) -- (0,0,0) -- (-\a,0,0) -- (-\a,\a,0);
+  \draw[thick,dashed] (0,\a,-\a) -- (0,\a,0);
+  \draw[thick,dashed] (0,0,-\a) -- (0,0,0);
+  \draw[thick,dashed] (-\a,0,-\a) -- (-\a,0,0);
+
+
+ \end{scope}
+\end{tikzpicture}

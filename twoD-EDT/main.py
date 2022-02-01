@@ -33,14 +33,14 @@ class controlWidget(QDockWidget):
         self.reset_btn = QPushButton("Reset")
         self.reset_btn.clicked.connect(self.evnt_reset_clicked)
 
-        self.start_stop = QPushButton("Start Metropolis")
+        self.start_stop = QPushButton("Randomize")
         self.start_stop.clicked.connect(self.evnt_start_stop_clicked)
 
-        self.pachner_31 = QPushButton("Pachner 31")
+        self.pachner_31 = QPushButton("Pachner (3,1)")
         self.pachner_31.clicked.connect(self.evnt_pachner_31_clicked)
-        self.pachner_13 = QPushButton("Pachner 13")
+        self.pachner_13 = QPushButton("Pachner (1,3)")
         self.pachner_13.clicked.connect(self.evnt_pachner_13_clicked)
-        self.pachner_22 = QPushButton("Pachner 22")
+        self.pachner_22 = QPushButton("Pachner (2,2)")
         self.pachner_22.clicked.connect(self.evnt_pachner_22_clicked)
 
         self.vbox_layout.addWidget(self.reset_btn)
